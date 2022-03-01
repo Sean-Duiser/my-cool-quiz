@@ -84,7 +84,7 @@ function displayQuestionThree() {
     // creates another div so I can append my answers to my question
     var answersThree = document.createElement('div');
     questionTime.setAttribute('id', 'divQ4')
-    var answerThreeKey = ["1972", "2022", "1991", "457 B.C."];
+    var answerThreeKey = ["Yes", "No", "Probz", "No one really knows"];
     answersThree.innerHTML = answerThreeKey;
     document.body.appendChild(answersThree);
     console.log(answersThree);
@@ -100,7 +100,7 @@ function displayQuestionFour() {
 
     // creates another div so I can append my answers to my question
     var answersFour = document.createElement('div');
-    var answerFourKey = ["1972", "2022", "1991", "457 B.C."];
+    var answerFourKey = ['Always', 'No', 'Wouldn\'t you like to know?', 'What does "cold" mean?'];
     answersFour.innerHTML = answerFourKey;
     document.body.appendChild(answersFour);
     console.log(answersFour);
