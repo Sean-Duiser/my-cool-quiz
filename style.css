@@ -1,3 +1,25 @@
 * {
     box-sizing: border-box;
 }
+header {
+    background-color: plum;
+}
+#mainMenu {
+    background-color: antiquewhite;
+}
+
+#quiz {
+    background-color: aqua;
+}
+
+#leaderboard {
+    background-color: cadetblue;
+}
+
+#timer {
+    color: olivedrab;
+}
+
+#myQuestions {
+    background-color: darkgreen;
+}
