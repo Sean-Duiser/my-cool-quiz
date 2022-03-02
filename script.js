@@ -3,17 +3,21 @@ var mainEl = document.getElementById("main");
 var playTime = document.getElementById("play");
 var secondsLeft = 1000;
 
-function makeBtn() {
-    var genBtn = document.createElement('button');
-    genBtn.setAttribute('id', 'correct');
-    genBtn.textContent = ''
-
-}
-
 var goBtn = document.querySelector('#go');
 
+var questionOne="What planet do we live on?";
+var questionTwo="How many days are in a Leap Year?";
+var questionThree ="Which animal has stripes on its skin as well as its fur?";
+var questionFour='Which NFL team achieved the "Perfect Season" in 1972?';
+
+var myQuestions = [
+    questionOne,
+    questionTwo,
+    questionThree,
+    questionFour
+]
+
 var myAnswers = {
-    answers: {
         answersOne: [
             "Earth",
             "Mars",
@@ -38,10 +42,7 @@ var myAnswers = {
             "Carolina Panthers",
             "Green Bay Packers"
         ]
-    }
 };
-
-console.log(myAnswers.answers.answersFour[0]);
 
 // this hides the start screen and starts the question
 function displayQuestionOne() {
