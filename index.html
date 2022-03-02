@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" link href = "./style.css">
+    <link rel="stylesheet" link href="./style.css">
     <title>My Cool Quiz</title>
 </head>
+
 <body>
     <header>
-        <h1 class="time" style="text-align:center;"></h1>
+        <h1 class="timer" style="text-align:center;"></h1>
         <h1 style="text-align: center;">My Cool Quiz</h1>
     </header>
 
-    <div id="play">
-        <h2>Take The Quiz!</h2>
-        <button id="go">Let's Go!</button>
+    <div id="mainMenu">
+        <h2>Welcome to my quiz!</h2>
+        <button id="start">start</button>
     </div>
 
-    <div id="endgame">
+    <div id="quiz">
+        <h2>Select the correct answer to continue!</h2>
+        <div id="myQuestions"></div>
+    </div>
+
+    <div id="leaderboard">
         <h2>Leaderboard</h2>
-        <form>Initials <input type="text"></form>
+        <div>
+            <h3>Log your score using your initials below!</h3>
+            <label for="initials">Initials: </label>
+            <input type="text" id="initials">
+        </div>
     </div>
 
     <script src="./script.js"></script>
 </body>
+
 </html>
