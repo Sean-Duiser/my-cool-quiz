@@ -1,59 +1,51 @@
-console.log("JavaScript is working!");
-
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
+var playTime = document.getElementById("play");
 var secondsLeft = 1000;
+
+function makeBtn() {
+    var genBtn = document.createElement('button');
+    genBtn.setAttribute('id', 'correct');
+    genBtn.textContent = ''
+
+}
 
 var goBtn = document.querySelector('#go');
 
-var myQuestions = {
-    questionOne: "What planet do we live on?",
-    questionTwo: "How many days are in a Leap Year?",
-    questionThree: "Which animal has stripes on it's skin as well as it's fur?",
-    questionFour: 'Which NFL team achieved the "perfect" season in 1972?'
+var myAnswers = {
+    answers: {
+        answersOne: [
+            "Earth",
+            "Mars",
+            "Saturn",
+            "France"
+        ],
+        answersTwo: [
+            "364",
+            "365",
+            "366",
+            "367"
+        ],
+        answersThree: [
+            "Zebra",
+            "Skunk",
+            "Striped Hyena",
+            "Tiger"
+        ],
+        answersFour:  [
+            "Miami Dolphins",
+            "New York Giants",
+            "Carolina Panthers",
+            "Green Bay Packers"
+        ]
+    }
 };
 
-var questionUno = {
-    answers: [
-        "Earth",
-        "Mars",
-        "Saturn",
-        "France"
-    ]
-}
-
-var questionDos = {
-    answers: [
-        "364",
-        "365",
-        "366",
-        "367"
-    ]
-}
-
-var questionTres = {
-    answers: [
-        "Zebra",
-        "Skunk",
-        "Striped Hyena",
-        "Tiger"
-    ]
-}
-
-var questionQuatro = {
-    answers: [
-        "Miami Dolphins",
-        "New York Giants",
-        "Green Bay Packers",
-        "Carolina Panthers"
-    ]
-}
-
-console.log(questionUno);
+console.log(myAnswers.answers.answersFour[0]);
 
 // this hides the start screen and starts the question
 function displayQuestionOne() {
-    document.getElementById('play').style.display = 'none';
+    playTime.style.display = 'none';
     
     // creates a div so that I can append my question to the body
     var questionTime = document.createElement('div');
