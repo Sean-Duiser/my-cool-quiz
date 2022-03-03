@@ -3,13 +3,16 @@ var quizEl = document.querySelector('#quiz');
 var leaderboardEl = document.querySelector('#leaderboard');
 var timerEl = document.querySelector('.timer');
 var myQuestionsEl = document.querySelector('#myQuestions');
-var titleEl = document.querySelector('.title')
+var titleEl = document.querySelector('.title');
+var scoresEl = document.querySelector('#highScores');
+var headerEl = document.querySelector('header');
 
 var logScore = document.querySelector('#initials');
 var startBtn = document.querySelector('#start');
 
 var secondsLeft = 10;
 var cursor = 0;
+var score = secondsLeft;
 
 var quizAnswers = [
     [
@@ -17,19 +20,19 @@ var quizAnswers = [
         "Saturn",
         "France",
         "Earth",
-    ], 
+    ],
     [
         "364",
         "365",
         "367",
         "366",
-    ], 
+    ],
     [
         "Zebra",
         "Skunk",
         "Striped Hyena",
         "Tiger",
-    ], 
+    ],
     [
         "New York Giants",
         "Carolina Panthers",
@@ -51,7 +54,7 @@ function showAnswer() {
         var responses = myAnswer[i];
         var answerBtn = document.createElement('button');
         answerBtn.textContent = responses;
-        answerBtn.addEventListener('click', function() {
+        answerBtn.addEventListener('click', function () {
             secondsLeft--
         });
         quizEl.appendChild(answerBtn);
@@ -59,7 +62,7 @@ function showAnswer() {
 
     var correctAnswerBtn = document.createElement('button');
     correctAnswerBtn.textContent = myAnswer[3];
-    correctAnswerBtn.addEventListener('click', function() {
+    correctAnswerBtn.addEventListener('click', function () {
         cursor++;
         if (cursor < quizAnswers.length) {
             quizEl.innerHTML = "";
@@ -90,18 +93,21 @@ function setTime() {
             clearInterval(timeInterval);
             sendMessage();
         }
+        if (cursor >= quizQuestions.length) {
+            clearInterval(timeInterval);
+        }
     }, 1000);
 };
 
 // this will display if the timer reaches 0
 function sendMessage() {
-    titleEl.textContent="";
+    titleEl.textContent = "";
     timerEl.textContent = "Time is up! Game Over!";
     mainMenuEl.style.display = "none";
     quizEl.style.display = "none";
     leaderboardEl.style.display = "none";
     myQuestionsEl.style.display = "none";
-    
+
 };
 
 // this is the function that displays the quiz screen
