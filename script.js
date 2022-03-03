@@ -24,7 +24,7 @@ function pullScores() {
 };
 
 function displayScores() {
-   var loggedScores = JSON.parse(localStorage.getItem('score')) + secondsLeft;
+   var loggedScores = JSON.parse(localStorage.getItem('score'));
    if (loggedScores !== null) {
        scores = loggedScores
    }
@@ -32,7 +32,7 @@ function displayScores() {
 };
 
 function logScores () {
-    localStorage.setItem('score', JSON.stringify(score));
+    localStorage.setItem('score', JSON.stringify(scores));
 };
 
 initialsForm.addEventListener("submit", function(event) {
