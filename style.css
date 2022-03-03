@@ -16,10 +16,14 @@ header {
     background-color: cadetblue;
 }
 
-#timer {
+.timer {
     color: olivedrab;
 }
 
 #myQuestions {
     background-color: darkgreen;
+}
+
+#scores {
+    background-color: chocolate;
 }
