@@ -8,17 +8,17 @@ var scoresEl = document.querySelector('#highScores');
 var headerEl = document.querySelector('header');
 
 
-var logScore = document.querySelector('#initials');
+var logScore = document.querySelector('#scoreBtn');
 logScore.addEventListener('click', function() {
     localStorage.setItem('score', secondsLeft);
 });
 
 function displayScores() {
-    var lastScore = JSON.parse(localStorage.getItem("score"));
+    var lastScore = localStorage.getItem('score');
     if (lastScore !== null) {
         document.getElementById('scores').appendChild(lastScore);
     }
-}
+};
 
 var startBtn = document.querySelector('#start');
 

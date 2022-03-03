@@ -1,4 +1,4 @@
-var timerEl = document.querySelector("time");
+var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var playTime = document.getElementById("play");
 var endgameEl = document.getElementById("endgame");
