@@ -1,28 +1,57 @@
 var mainMenuEl = document.querySelector('#mainMenu');
 var quizEl = document.querySelector('#quiz');
 var leaderboardEl = document.querySelector('#leaderboard');
-var timerEl = document.querySelector('.timer');
+var timerEl = document.querySelector('#timer');
 var myQuestionsEl = document.querySelector('#myQuestions');
-var titleEl = document.querySelector('.title');
+var titleEl = document.querySelector('#title');
 var scoresEl = document.querySelector('#highScores');
 var headerEl = document.querySelector('header');
+var initialsForm = document.querySelector('#initials-form');
+var scoreLogged = document.querySelector('#initials-text');
 
+var scores = [];
 
-var logScore = document.querySelector('#scoreBtn');
-logScore.addEventListener('click', function() {
-    localStorage.setItem('score', secondsLeft);
-});
-
-function displayScores() {
-    var lastScore = localStorage.getItem('score');
-    if (lastScore !== null) {
-        document.getElementById('scores').appendChild(lastScore);
+function pullScores() {
+    scoresEl.innerHTML = "";
+    
+    for (var i = 0; i < scores.length; i++) {
+        var userScore = scores[i];
+        var li = document.createElement("li");
+        li.textContent = userScore;
+        li.setAttribute("data-index", i);
+        scoresEl.appendChild(li);
     }
 };
 
+function displayScores() {
+   var loggedScores = JSON.parse(localStorage.getItem('score')) + secondsLeft;
+   if (loggedScores !== null) {
+       scores = loggedScores
+   }
+   pullScores();
+};
+
+function logScores () {
+    localStorage.setItem('score', JSON.stringify(score));
+};
+
+initialsForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var initialsInput = scoreLogged.value.trim();
+    if (initialsInput === "") {
+        return;
+    }
+    scores.push(initialsInput);
+    scoreLogged.value = "";
+
+    logScores();
+    pullScores();
+});
+
+
 var startBtn = document.querySelector('#start');
 
-var secondsLeft = 10;
+var secondsLeft = 30;
 var cursor = 0;
 var score = secondsLeft;
 

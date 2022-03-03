@@ -11,8 +11,8 @@
 
 <body>
     <header>
-        <h1 class="timer" style="text-align:center;"></h1>
-        <h1 class="title" style="text-align: center;">My Cool Quiz</h1>
+        <h1 id="timer" style="text-align:center;"></h1>
+        <h1 id="title" style="text-align: center;">My Cool Quiz</h1>
     </header>
 
     <div id="mainMenu">
@@ -30,9 +30,10 @@
         <h2 style="text-align:center;">Leaderboard</h2>
         <div>
             <h3 style="text-align:center;">Log your score using your initials below!</h3>
-            <label for="initials">Initials: </label>
-            <input type="text" id="initials">
-            <input type="submit" value="Log score" id="scoreBtn">
+            <form id="initials-form" method="post">
+                <label for="initials">Initials: </label>
+                <input type="text" id="initials-text" name="intials-text">
+            </form>
         </div>
         
         <div id="scores">
